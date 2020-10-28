@@ -5,6 +5,8 @@ const s = 1
 const m = s * 60
 const h = m * 60
 const d = h * 24
+const mo = d * 30
+const w = d * 7
 const y = d * 365.25
 const ms = s / 1000
 const us = ms / 1000
@@ -18,7 +20,9 @@ const timeUnitsList = [
   { unit: 's', amount: s },
   { unit: 'ms', amount: ms },
   { unit: 'µs', amount: us },
-  { unit: 'ns', amount: ns }
+  { unit: 'ns', amount: ns },
+  { unit: 'mo', amoumt: mo },
+  { unit: 'w', amount: w }
 ]
 
 const timeUnits = _.fromPairs(_.map(timeUnitsList, (el) => {
@@ -63,7 +67,7 @@ module.exports.stringify = stringify
 
 const wsRegex = '[ \\t]'
 const positiveNumberRegex = '(?:0|[1-9]\\d*)(?:\\.\\d+)?'
-const unitRegex = '(?:ns|µs|ms|s|m|h|d|y)'
+const unitRegex = '(?:ns|µs|ms|s|m|h|d|y|mo|w)'
 const elementRegex = `(?:(${positiveNumberRegex})${wsRegex}*(${unitRegex}))`
 const wholeRegex = `^${wsRegex}*(-)?((?:${wsRegex}*${elementRegex}${wsRegex}*)+)$`
 
