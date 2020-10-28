@@ -44,6 +44,7 @@ test('parse', () => {
   expect(sd.parse('1h')).toBe(1 * 60 * 60)
   expect(sd.parse('1d')).toBe(1 * 60 * 60 * 24)
   expect(sd.parse('1y')).toBe(1 * 60 * 60 * 24 * 365.25)
+  expect(sd.parse('1c')).toBe(1 * 60 * 60 * 24 * 30)
   expect(sd.parse('1ms')).toBe(1 / 1000)
   expect(sd.parse('1µs')).toBe(1 / 1000 / 1000)
   expect(sd.parse('1ns')).toBe(1 / 1000 / 1000 / 1000)
