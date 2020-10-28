@@ -21,7 +21,7 @@ const timeUnitsList = [
   { unit: 'ms', amount: ms },
   { unit: 'µs', amount: us },
   { unit: 'ns', amount: ns },
-  { unit: 'mo', amoumt: mo },
+  { unit: 'month', amount: mo },
   { unit: 'w', amount: w }
 ]
 
@@ -67,7 +67,7 @@ module.exports.stringify = stringify
 
 const wsRegex = '[ \\t]'
 const positiveNumberRegex = '(?:0|[1-9]\\d*)(?:\\.\\d+)?'
-const unitRegex = '(?:ns|µs|ms|s|m|h|d|y|mo|w)'
+const unitRegex = '(?:ns|µs|ms|s|m|h|d|y|month|w)'
 const elementRegex = `(?:(${positiveNumberRegex})${wsRegex}*(${unitRegex}))`
 const wholeRegex = `^${wsRegex}*(-)?((?:${wsRegex}*${elementRegex}${wsRegex}*)+)$`
 
